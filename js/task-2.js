@@ -14,11 +14,10 @@ class Storage {
   }
 
   removeItem(itemToRemove) {
-    for (var i = 0; i < this.#items.length; i++) {
-      if (this.#items[i] === itemToRemove) {
-        if (i != -1) {
-          this.#items.splice(i, 1);
-        }
+    if (this.#items.includes(itemToRemove)) {
+      const i = this.#items.indexOf(itemToRemove);
+      if (i >= 0) {
+        this.#items.splice(i, 1);
       }
     }
   }
